@@ -1,0 +1,39 @@
+﻿<Window x:Class="Interact.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Interact" Height="600" Width="800" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21"/>
+            <RowDefinition/>
+            <RowDefinition Height="120"/>
+        </Grid.RowDefinitions>
+        <DockPanel Height="21" VerticalAlignment="Top" Grid.Row="0">
+            <Menu>
+                <MenuItem Header="Action">
+                    <MenuItem x:Name="Pause" Header="Pause" Click="Pause_MenuItem_Click"></MenuItem>
+                    <MenuItem x:Name="Play" Header="Play" Click="Play_MenuItem_Click"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Rate">
+                    <MenuItem x:Name="FPS5" Header="5fps" Click="FPS_MenuItem_Click"></MenuItem>
+                    <MenuItem x:Name="FPS10" Header="10fps" Click="FPS_MenuItem_Click"></MenuItem>
+                    <MenuItem x:Name="FPS15" Header="15fps" Click="FPS_MenuItem_Click"></MenuItem>
+                    <MenuItem x:Name="FPS30" Header="30fps" Click="FPS_MenuItem_Click"></MenuItem>
+                    <MenuItem x:Name="FPS60" Header="60fps" Click="FPS_MenuItem_Click"></MenuItem>
+                    <MenuItem x:Name="FPS80" Header="80fps" Click="FPS_MenuItem_Click"></MenuItem>
+                    <MenuItem x:Name="FPS100" Header="100fps" Click="FPS_MenuItem_Click"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Canvas x:Name="field" Margin="0" Grid.Row="1" Background="#FFA1DDEA">
+        </Canvas>
+        <TextBox x:Name="messages" Margin="0" Grid.Row="2" TextWrapping="Wrap" Text="" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Auto"/>
+        <Slider x:Name="fps_slider" HorizontalAlignment="Left" Margin="107,23,0,0" Grid.Row="2" VerticalAlignment="Top" Height="34" Width="422" ValueChanged="fps_slider_ValueChanged" SmallChange="1" Minimum="1" Maximum="100" TickPlacement="TopLeft" Value="30"/>
+        <Label Content="1fps" HorizontalAlignment="Left" Margin="75,26,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Label Content="100fps" HorizontalAlignment="Left" Margin="529,26,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Label Content="Rate:" HorizontalAlignment="Left" Margin="618,28,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Label x:Name="rateLabel" Content="" HorizontalAlignment="Left" Margin="650,28,0,0" Grid.Row="2" VerticalAlignment="Top" Width="66"/>
+        <Label Content="Time:" HorizontalAlignment="Left" Margin="75,68,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.421,0.346"/>
+        <Label x:Name="frameCountLabel" Content="" HorizontalAlignment="Left" Margin="109,68,0,0" Grid.Row="2" VerticalAlignment="Top" Width="247"/>
+    </Grid>
+</Window>
